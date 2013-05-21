@@ -1,9 +1,8 @@
 #
-# Author:: Tyler Sanders
 # Cookbook Name:: jrockit
-# Recipe:: default
+# Recipe:: windows
 #
-# Copyright 2013, Tyler Sanders
+# Copyright 2013, Geocent
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
