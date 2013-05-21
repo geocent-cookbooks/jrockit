@@ -20,10 +20,8 @@
 
 case platform
 when "windows"
-  default['java']['windows']['url'] = ""
-  default['java']['java_home'] = "C:\\Java\\jrockit"
-  default['java']['installer_dir'] = "C:\\temp"
+  default['jrockit']['windows']['url'] = nil
+  default['jrockit']['java_home'] = "C:\\Java\\jrockit"
+  default['jrockit']['jre_home'] = "C:\\Java\\jrockit\\jre"
+  default['jrockit']['windows']['package_name'] = "Oracle JRockit JDK R28.2.7 for Java SE 6 with JRMC 4.1"
 end
-
-# if you change this to true, you can download directly from Oracle
-default['java']['oracle']['accept_oracle_download_terms'] = false

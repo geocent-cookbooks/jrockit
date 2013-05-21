@@ -17,29 +17,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 if platform?("windows")
 
-  Chef::Log.warn("No download url set for java installer.") unless node['java']['windows']['url']
+  Chef::Log.warn("No download url set for java installer.") unless node['jrockit']['windows']['url']
 
-  java_home = node['java']['java_home']
+  java_home = node['jrockit']['java_home']
 
-  if File.exists?(java_home)
-    Chef::Log.info("#{java_home} already exists.....not installing JRockit")
-  else 
-    Chef::Log.info("#{java_home} does not exist")
-
-    windows_package node['java']['windows']['package_name'] do
-        source node['java']['windows']['url']
+  template "#{Chef::Config[:file_cache_path]}/silent.xml" do
+    source "silent.xml.erb"
+  end
+  
+  windows_package node['jrockit']['windows']['package_name'] do
+        source node['jrockit']['windows']['url']
         action :install
         installer_type :custom
-        options "/s"
-    end
-
-    env "JAVA_HOME" do
-        value java_home
-    end
-
+        options "-mode=silent -silent_xml=\"#{Chef::Config[:file_cache_path]}/silent.xml\" -log=\"#{Chef::Config[:file_cache_path]}\\silent.log\""
   end
+
+  env "JAVA_HOME" do
+    value java_home
+  end
+
 end
 

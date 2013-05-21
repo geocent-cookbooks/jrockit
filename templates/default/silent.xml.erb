@@ -19,7 +19,7 @@
 <!--
 <data-value name="USER_INSTALL_DIR" value="c:\java\jrockit-jdk1.6.0_33-R28.2.4-4.1.0" /> 
 -->
-<data-value name="USER_INSTALL_DIR" value="<%= node['java']['java_home'] %>" /> 
+<data-value name="USER_INSTALL_DIR" value="<%= node['jrockit']['java_home'] %>" /> 
 <!-- 
       Optional installation of Demos and Samples
         Use "true", or "yes", to install this optional component.
@@ -53,7 +53,7 @@
       
 
 --> 
-<data-value name="PUBLIC_JRE_INSTALL_DIR" value="<%= node['java']['jre_home'] %>" /> 
+<data-value name="PUBLIC_JRE_INSTALL_DIR" value="<%= node['jrockit']['jre_home'] %>" /> 
 </input-fields>
 </domain-template-descriptor>
 
