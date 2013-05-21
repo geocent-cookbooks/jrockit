@@ -19,4 +19,4 @@ Official JRockit install binary (Windows).
 
 # Recipes
 
-* `windows` - Installs JRockit on Windows
+* `jrockit` - Installs JRockit on Windows
