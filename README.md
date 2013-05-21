@@ -1,13 +1,17 @@
 # jrockit cookbook
 
+Installs and configures Oracle JRockit JDK.
+
 # Requirements
 
-# Usage
+Official JRockit install binary (Windows).
 
 # Attributes
 
+* `default['java']['windows']['url']` - URL hosting the installer binary
+* `default['java']['java_home']` - JAVA_HOME directory
+* `default['java']['installer_dir']` - temporary directory for installer
+
 # Recipes
 
-# Author
-
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+* `windows` - Installs JRockit on Windows
